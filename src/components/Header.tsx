@@ -6,10 +6,11 @@ export function Header() {
                     <a
                         href="#"
                         className="h-full p-2 pl-4 hover:scale-105 duration-200"
+                        role="button"
                     >
                         <img
                             src="/logos/header_logo.png"
-                            alt=""
+                            alt="Dhruv"
                             className="h-full"
                         />
                     </a>
@@ -48,6 +49,7 @@ function NavLink({
 }) {
     return (
         <a
+            role="button"
             href={href}
             className={`border border-transparent hover:border-[#ffffffc0] rounded-lg p-2 px-4 text-nowrap duration-300 ${className}`}
         >

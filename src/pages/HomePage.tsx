@@ -7,6 +7,7 @@ export function HomePage() {
                 <p>Hi, I'm</p>
                 <p
                     className={`text-5xl sm:text-6xl md:text-7xl lg:text-8xl bg-gradient-to-r ${GRADIENTS[0].normal} inline-block text-transparent bg-clip-text`}
+                    role="heading"
                 >
                     Dhruv Dhaduk
                 </p>
@@ -70,6 +71,8 @@ function ExternalLink({
             href={href}
             className={`p-0.5 bg-gradient-to-r ${borderGradient} rounded-lg min-w-40 md:min-w-48`}
             target="_blank"
+            role="button"
+            aria-label={label}
         >
             <span
                 className={`bg-black hover:bg-gradient-to-r ${borderGradientHover} rounded-lg flex justify-center items-center gap-2 text-nowrap p-2 px-6 md:p-3 md:px-8 text-sm md:text-base`}
