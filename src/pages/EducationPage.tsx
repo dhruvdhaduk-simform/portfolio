@@ -13,7 +13,9 @@ export function EducationPage() {
                         key={edu.course}
                         className={`flex flex-col gap-2 ${styles.li}`}
                     >
-                        <span className="text-xl font-bold">{edu.course}</span>
+                        <span className="text-xl font-bold" role="heading">
+                            {edu.course}
+                        </span>
                         <span>
                             {edu.institute}, {edu.city}
                         </span>

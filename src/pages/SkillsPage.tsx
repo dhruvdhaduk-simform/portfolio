@@ -18,6 +18,7 @@ export function SkillsPage() {
                             className="w-16 h-16 md:w-20 md:h-20"
                             tabIndex={-1}
                             key={skill.name}
+                            aria-label={skill.name}
                         >
                             <img
                                 className="w-full h-full object-contain"
@@ -36,6 +37,7 @@ export function SkillsPage() {
                             className="w-16 h-16 md:w-20 md:h-20"
                             tabIndex={-1}
                             key={skill.name}
+                            aria-label={skill.name}
                         >
                             <img
                                 className="w-full h-full object-contain"
