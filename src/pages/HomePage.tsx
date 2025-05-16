@@ -54,6 +54,14 @@ export function HomePage() {
     );
 }
 
+interface ExternalLinkProps {
+    href: string;
+    imgURL: string;
+    label: string;
+    borderGradient: string;
+    borderGradientHover: string;
+}
+
 /** Returns an External link with specified gradient stylings. */
 function ExternalLink({
     href,
@@ -61,13 +69,7 @@ function ExternalLink({
     label,
     borderGradient,
     borderGradientHover,
-}: {
-    href: string;
-    imgURL: string;
-    label: string;
-    borderGradient: string;
-    borderGradientHover: string;
-}) {
+}: ExternalLinkProps) {
     return (
         <a
             href={href}
