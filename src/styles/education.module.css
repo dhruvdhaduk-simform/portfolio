@@ -29,6 +29,5 @@
 }
 
 .li:last-child::after {
-    /* display: none; */
     height: 100%;
 }
