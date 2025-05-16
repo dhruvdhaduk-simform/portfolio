@@ -2,7 +2,7 @@
 export function Header() {
     return (
         <header className="z-10 fixed top-6 left-0 right-0 w-full flex justify-center">
-            <div className="w-full max-w-[100rem] px-9">
+            <div className="w-full max-w-[80rem] px-9">
                 <div className="glassmorphic rounded-2xl h-14 flex justify-between">
                     <a
                         href="#"

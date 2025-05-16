@@ -6,7 +6,7 @@ import { Header } from '@/components/Header';
 
 function App() {
     return (
-        <div className="w-full max-w-[100rem] m-auto">
+        <div className="w-full max-w-[80rem] m-auto">
             <Header />
 
             <PageLayout>
