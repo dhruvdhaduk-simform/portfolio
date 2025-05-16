@@ -9,9 +9,9 @@ interface MarqueeSkillsProp {
 export function MarqueeSkills({ direction }: MarqueeSkillsProp) {
     return (
         <div
-            className={`w-full overflow-hidden flex gap-5 ${direction === 'reverse' ? marqueeStyles['marquee-reverse'] : marqueeStyles.marquee}`}
+            className={`w-full overflow-hidden flex ${direction === 'reverse' ? marqueeStyles['marquee-reverse'] : marqueeStyles.marquee}`}
         >
-            <div className="flex shrink-0 gap-10 min-w-full">
+            <div className="flex shrink-0 gap-10 px-5 min-w-full">
                 {SKILLS.map((skill) => (
                     <a
                         href={skill.url}
@@ -30,7 +30,7 @@ export function MarqueeSkills({ direction }: MarqueeSkillsProp) {
                 ))}
             </div>
 
-            <div className="flex shrink-0 gap-10 min-w-full">
+            <div className="flex shrink-0 gap-10 px-5 min-w-full">
                 {SKILLS.map((skill) => (
                     <a
                         href={skill.url}
