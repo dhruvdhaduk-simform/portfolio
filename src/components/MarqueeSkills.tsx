@@ -1,10 +1,11 @@
-import marqueeStyles from '@/styles/marquee.module.css';
 import { SKILLS } from '@/data/skills';
+import marqueeStyles from '@/styles/marquee.module.css';
 
 interface MarqueeSkillsProp {
     direction: 'forward' | 'reverse';
 }
 
+/** Shows the Skills using the Marquee Effect. */
 export function MarqueeSkills({ direction }: MarqueeSkillsProp) {
     return (
         <div
