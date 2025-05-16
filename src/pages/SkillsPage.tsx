@@ -22,7 +22,7 @@ export function SkillsPage() {
                             <img
                                 className="w-full h-full object-contain"
                                 src={skill.logo}
-                                alt=""
+                                alt={skill.name}
                             />
                         </a>
                     ))}
@@ -40,7 +40,7 @@ export function SkillsPage() {
                             <img
                                 className="w-full h-full object-contain"
                                 src={skill.logo}
-                                alt=""
+                                alt={skill.name}
                             />
                         </a>
                     ))}
