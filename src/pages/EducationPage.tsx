@@ -1,5 +1,5 @@
-import { PageHeading } from '@/components/PageHeading';
 import { EDUCATION } from '@/data/education';
+import { PageHeading } from '@/components/PageHeading';
 import styles from '@/styles/education.module.css';
 
 export function EducationPage() {

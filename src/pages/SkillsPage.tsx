@@ -1,5 +1,5 @@
-import { PageHeading } from '@/components/PageHeading';
 import { SKILLS } from '@/data/skills';
+import { PageHeading } from '@/components/PageHeading';
 
 export function SkillsPage() {
     return (
