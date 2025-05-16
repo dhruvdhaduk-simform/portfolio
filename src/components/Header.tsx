@@ -1,3 +1,4 @@
+/** Site logo and navigation links to different pages/sections. */
 export function Header() {
     return (
         <header className="z-10 fixed top-6 left-0 right-0 w-full flex justify-center">
@@ -15,6 +16,7 @@ export function Header() {
                         />
                     </a>
 
+                    {/* Navigation links to different pages/sections. */}
                     <nav className="flex items-center gap-2 px-2">
                         <NavLink href="#skills" className="hidden sm:inline">
                             Skills
@@ -38,6 +40,7 @@ export function Header() {
     );
 }
 
+/** Returns an anchor tag with some stylings for Nav Links in Header */
 function NavLink({
     href,
     className,
