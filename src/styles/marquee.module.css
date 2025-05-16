@@ -8,18 +8,34 @@
     }
 }
 
+@keyframes marquee-reverse {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+}
+
 .marquee > * {
     animation: marquee 20s linear infinite;
 }
+.marquee-reverse > * {
+    animation: marquee-reverse 20s linear infinite;
+}
 
-.marquee:hover > * {
+.marquee:hover > *,
+.marquee-reverse:hover > * {
     animation-play-state: paused;
 }
 
-.marquee {
+.marquee,
+.marquee-reverse {
     position: relative;
 }
-.marquee::before {
+.marquee::before,
+.marquee-reverse::before {
     content: '';
     width: 3rem;
     height: 100%;
@@ -30,7 +46,8 @@
 
     background: linear-gradient(to right, black, #00000000);
 }
-.marquee::after {
+.marquee::after,
+.marquee-reverse::after {
     content: '';
     width: 3rem;
     height: 100%;
