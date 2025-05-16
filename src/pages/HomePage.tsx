@@ -1,4 +1,4 @@
-import { GRADIENTS } from '@/constants';
+import { GRADIENTS } from '@/constants/gradients';
 
 export function HomePage() {
     return (
