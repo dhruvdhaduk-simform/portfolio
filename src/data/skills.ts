@@ -1,3 +1,4 @@
+/** Data for Skills section. */
 export const SKILLS = [
     {
         name: 'html',

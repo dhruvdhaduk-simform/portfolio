@@ -1,3 +1,4 @@
+/** Data for Education section. */
 export const EDUCATION = [
     {
         course: "Bachlor's in Computer Engineering",
