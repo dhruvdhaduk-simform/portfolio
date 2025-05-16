@@ -1,5 +1,6 @@
 import { GRADIENTS } from '@/constants/gradients';
 
+/** Home Page of the site. Contains title, description, External Links. */
 export function HomePage() {
     return (
         <div className="w-full h-full p-4 flex flex-col justify-center relative">
@@ -53,6 +54,7 @@ export function HomePage() {
     );
 }
 
+/** Returns an External link with specified gradient stylings. */
 function ExternalLink({
     href,
     imgURL,
