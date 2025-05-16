@@ -1,3 +1,4 @@
+/** Collection of tailwind utility classes for different gradients. */
 export const GRADIENTS = [
     {
         normal: 'from-[#9845E8] via-[#33D2FF] to-[#DD5789]',
