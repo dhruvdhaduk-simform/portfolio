@@ -40,16 +40,14 @@ export function Header() {
     );
 }
 
-/** Returns an anchor tag with some stylings for Nav Links in Header */
-function NavLink({
-    href,
-    className,
-    children,
-}: {
+interface NavLinkProps {
     href: string;
     className?: string;
     children: React.ReactNode;
-}) {
+}
+
+/** Returns an anchor tag with some stylings for Nav Links in Header */
+function NavLink({ href, className, children }: NavLinkProps) {
     return (
         <a
             role="button"
