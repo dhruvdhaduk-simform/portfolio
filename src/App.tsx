@@ -1,5 +1,5 @@
 import { Header } from '@/components/Header';
-import { PageLayout } from '@/components/layout/PageLayout';
+import { PageLayout } from '@/layouts/PageLayout';
 import { HomePage } from '@/pages/HomePage';
 import { SkillsPage } from '@/pages/SkillsPage';
 import { EducationPage } from '@/pages/EducationPage';
