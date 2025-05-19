@@ -1,7 +1,7 @@
 import { GRADIENTS } from '@/constants/gradients';
 
 /** Home Page of the site. Contains title, description, External Links. */
-export function HomePage() {
+export function Home() {
     return (
         <div className="w-full h-full p-4 flex flex-col justify-center relative">
             <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 lg:gap-7 xl:gap-8">

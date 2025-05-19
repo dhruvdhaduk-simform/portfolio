@@ -2,7 +2,7 @@ import { EDUCATION } from '@/data/education';
 import { PageHeading } from '@/components/PageHeading';
 import styles from '@/styles/education.module.css';
 
-export function EducationPage() {
+export function Education() {
     return (
         <div className="w-full h-full flex flex-col justify-center gap-8">
             <PageHeading title="Education" />
