@@ -6,7 +6,7 @@ export function Skills() {
         <div className="w-full h-full flex flex-col justify-center gap-8">
             <PageHeading title="Skills" />
 
-            <MarqueeSkills direction="forward" />
+            <MarqueeSkills />
             <MarqueeSkills direction="reverse" />
         </div>
     );

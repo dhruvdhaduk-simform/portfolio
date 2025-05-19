@@ -2,11 +2,11 @@ import { SKILLS } from '@/data/skills';
 import marqueeStyles from '@/styles/marquee.module.css';
 
 interface MarqueeSkillsProp {
-    direction: 'forward' | 'reverse';
+    direction?: 'forward' | 'reverse';
 }
 
 /** Shows the Skills using the Marquee Effect. */
-export function MarqueeSkills({ direction }: MarqueeSkillsProp) {
+export function MarqueeSkills({ direction = 'forward' }: MarqueeSkillsProp) {
     return (
         <div
             className={`w-full overflow-hidden flex ${direction === 'reverse' ? marqueeStyles['marquee-reverse'] : marqueeStyles.marquee}`}
