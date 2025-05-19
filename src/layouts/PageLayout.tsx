@@ -1,6 +1,6 @@
-type PageLayoutProps = {
+type PageLayoutProps = React.PropsWithChildren<{
     id?: string;
-} & React.PropsWithChildren;
+}>;
 
 /** A wrapper which defines height, width, id for a Page component. */
 export function PageLayout({ id, children }: PageLayoutProps) {
