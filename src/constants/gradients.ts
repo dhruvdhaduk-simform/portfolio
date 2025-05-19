@@ -16,4 +16,4 @@ export const GRADIENTS = [
         normal: 'from-[#D24074] to-[#6518B4]',
         hover: 'hover:from-[#D24074] hover:to-[#6518B4]',
     },
-];
+] as const;
