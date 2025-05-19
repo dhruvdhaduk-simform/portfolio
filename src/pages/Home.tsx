@@ -81,7 +81,7 @@ function ExternalLink({
             <span
                 className={`bg-black hover:bg-gradient-to-r ${borderGradientHover} rounded-lg flex justify-center items-center gap-2 text-nowrap p-2 px-6 md:p-3 md:px-8 text-sm md:text-base`}
             >
-                <img className="w-4 md:w-5" src={imgURL} alt="" /> {label}
+                <img className="w-4 md:w-5" src={imgURL} alt={label} /> {label}
             </span>
         </a>
     );
