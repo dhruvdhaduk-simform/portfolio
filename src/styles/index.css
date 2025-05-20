@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+@theme {
+    --color-gray: #363636;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -11,5 +15,10 @@ body {
 
 .glassmorphic {
     backdrop-filter: blur(8px) contrast(1) saturate(1);
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.grid-cols-auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    place-content: center;
 }
