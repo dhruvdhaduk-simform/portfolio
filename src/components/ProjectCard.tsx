@@ -18,12 +18,17 @@ export function ProjectCard({ project }: ProjectCardProp) {
                     className="w-full h-full"
                     alt={project.title}
                 />
-                <p className="w-52 h-fit absolute inset-0 m-auto text-3xl font-bold text-center">
+                <p
+                    className="w-52 h-fit absolute inset-0 m-auto text-3xl font-bold text-center"
+                    role="heading"
+                >
                     {project.title}
                 </p>
             </div>
             <div className="flex-1 flex flex-col gap-2">
-                <p className="text-xl font-bold">{project.title}</p>
+                <p className="text-xl font-bold" role="heading">
+                    {project.title}
+                </p>
                 <p className="text-sm pb-4">{project.description}</p>
                 <p className="mt-auto flex gap-2 text-sm font-semibold text-blue-500">
                     {project.techStack.map((tech) => (
