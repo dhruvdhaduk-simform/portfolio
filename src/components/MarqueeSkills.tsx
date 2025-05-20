@@ -27,7 +27,7 @@ function MarqueeHalfList() {
                     className="w-16 h-16 md:w-20 md:h-20"
                     tabIndex={-1}
                     key={skill.name}
-                    aria-label={skill.name}
+                    aria-label={`${skill.name} (opens in a new tab)`}
                 >
                     <img
                         className="w-full h-full object-contain"

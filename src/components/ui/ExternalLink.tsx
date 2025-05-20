@@ -20,7 +20,7 @@ export function ExternalLink({
             className={`p-0.5 bg-gradient-to-r ${borderGradient} rounded-lg min-w-40 md:min-w-48`}
             target="_blank"
             role="button"
-            aria-label={label}
+            aria-label={`${label} (opens in a new tab)`}
         >
             <span
                 className={`bg-black hover:bg-gradient-to-r ${borderGradientHover} rounded-lg flex justify-center items-center gap-2 text-nowrap p-2 px-6 md:p-3 md:px-8 text-sm md:text-base`}

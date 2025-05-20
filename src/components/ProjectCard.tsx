@@ -39,7 +39,7 @@ export function ProjectCard({ project }: ProjectCardProp) {
                     <a
                         href={project.githubLink}
                         target="_blank"
-                        aria-label={`${project.title} GitHub Link`}
+                        aria-label={`${project.title} GitHub Link (opens in a new tab)`}
                         className="flex justify-center items-center gap-2 px-4 py-2 border rounded-lg border-gray hover:border-white"
                     >
                         <img
@@ -55,7 +55,7 @@ export function ProjectCard({ project }: ProjectCardProp) {
                         <a
                             href={project.liveLink}
                             target="_blank"
-                            aria-label={`${project.title} Live Link`}
+                            aria-label={`${project.title} Live Link (opens in a new tab)`}
                             className="flex justify-center items-center gap-2 px-4 py-2 border rounded-lg border-gray hover:border-white"
                         >
                             <img
