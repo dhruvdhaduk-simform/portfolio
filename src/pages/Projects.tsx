@@ -9,7 +9,7 @@ export function Projects() {
 
             <div className="grid grid-cols-auto-fit gap-8">
                 {PROJECTS.map((project) => (
-                    <ProjectCard project={project} key={project.title} />
+                    <ProjectCard project={project} key={project.id} />
                 ))}
             </div>
         </div>

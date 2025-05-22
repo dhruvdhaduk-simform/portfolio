@@ -2,6 +2,7 @@
  * Interface representing a single Project.
  */
 export interface Project {
+    id: string;
     title: string;
     description: string;
     /** URL of the thumbnail of the project.  */

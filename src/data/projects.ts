@@ -4,6 +4,7 @@ import { getRandomGradientImage } from '@/utils/getRandomGradientImage';
 /** Data for Projects section. */
 export const PROJECTS: Array<Project> = [
     {
+        id: crypto.randomUUID(),
         title: 'Tic-Tac-Toe for Terminal',
         description:
             "This is a Tic-Tac-Toe game designed to be played directly in your terminal. It's built using the React showcasing how it can be utilized for this.",
@@ -13,6 +14,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['TypeScript', 'React'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'Spawn React App',
         description:
             'spawn-react-app is an opinionated CLI tool to instantly scaffold modern React projects with best practices and performance-first defaults.',
@@ -23,6 +25,7 @@ export const PROJECTS: Array<Project> = [
     },
 
     {
+        id: crypto.randomUUID(),
         title: 'Image Magnifier',
         description:
             'This is a chrome extension which enables users the ability to magnify any image on any page. Users can magnify images by just hovering over them.',
@@ -34,6 +37,7 @@ export const PROJECTS: Array<Project> = [
     },
 
     {
+        id: crypto.randomUUID(),
         title: 'Live Stream Demo',
         description:
             "This is a demo about how live streaming works using ffmpeg and HLS. It generates a live stream out of user's webcam and serves it over HLS.",
@@ -43,6 +47,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['HTML', 'CSS', 'JavaScript', 'FFmpeg'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'X Skeleton UI',
         description:
             'This is a project that clones the skeleton UI of the Feed page of X (formerly Twitter). It contains Header, Navbar, Sidebar, Messages and Fedd sections.',
@@ -53,6 +58,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['HTML', 'CSS'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'Fair Share',
         description:
             'Fair Share is a TypeScript-powered expense tracker that automatically splits group costs and tracks who owes what, with data saved in localStorage.',
@@ -64,6 +70,7 @@ export const PROJECTS: Array<Project> = [
     },
 
     {
+        id: crypto.randomUUID(),
         title: 'Component Library',
         description:
             'This is the component library built by me. It contains various useful components. The package is easy to use, tree shakable with easy to browse components.',
@@ -73,6 +80,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['TypeScript', 'React', 'Storybook'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'Recipe Diary',
         description:
             "RecipeDiary is your personal hub for discovering, saving, and sharing delicious recipes. It's your go-to space to explore home-cooked goodness with ease.",
@@ -83,6 +91,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['TypeScript', 'React', 'TailwindCSS'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'Scientific Calculator',
         description:
             'This is a web-based Scientific Calculator built using vanilla JavaScript. It supports basic arithmatic operations, advanced mathematical functions, calculations.',
@@ -92,10 +101,9 @@ export const PROJECTS: Array<Project> = [
         liveLink: 'https://scific-calc.netlify.app/',
         techStack: ['HTML', 'CSS', 'JavaScript'],
     },
-
     {
+        id: crypto.randomUUID(),
         title: 'User Management',
-        // description: 'This is a simple user management CRUD app.',
         description:
             'This is a simple user management application designed to handle basic CRUD (Create, Read, Update, Delete) operations for user records.',
         thumbnail: getRandomGradientImage(),
@@ -105,6 +113,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['HTML', 'CSS', 'TypeScript'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'NFT marketplace leaderboard',
         description:
             'A simple HTML & CSS clone of an NFT marketplace leaderboard. This project was part of the first practical assignment given to us, focusing on replicating the UI.',
@@ -115,6 +124,7 @@ export const PROJECTS: Array<Project> = [
         techStack: ['HTML', 'CSS'],
     },
     {
+        id: crypto.randomUUID(),
         title: 'Flipkart Skeleton UI',
         description:
             'This is a frontend project that clones the skeleton UI of the Home page of Flipkart using HTML, CSS (Bootstrap) with responsive design.',
