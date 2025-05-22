@@ -1,4 +1,4 @@
-import { Project } from '@/types/project.types';
+import type { Project } from '@/types/project.types';
 import githubLogo from '/logos/github.svg';
 import linkLogo from '/logos/link.svg';
 
