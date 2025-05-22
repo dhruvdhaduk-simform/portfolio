@@ -137,4 +137,4 @@ export const PROJECTS: Array<Project> = [
         liveLink: 'https://flip-kart-skeleton-ui.netlify.app/',
         techStack: ['HTML', 'CSS', 'Bootstrap'],
     },
-];
+] as const;
