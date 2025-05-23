@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { toast } from 'sonner';
 import { PageHeading } from '@/components/PageHeading';
 import {
     validateName,
@@ -7,6 +8,8 @@ import {
 } from '@/utils/validations';
 
 export function ContactMe() {
+    const [isSubmitting, setIsSubmitting] = useState(false);
+
     // States to keep track of user inputs.
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -26,6 +29,22 @@ export function ContactMe() {
         e.preventDefault();
 
         if (nameError || emailError || messageError) return;
+
+        setIsSubmitting(true);
+
+        // Real mail sending function will be used instead.
+        const promise = (async () => {
+            await new Promise((resolve) => setTimeout(resolve, 2000));
+            return 'Message Sent successfully.';
+        })();
+
+        promise.finally(() => setIsSubmitting(false));
+
+        toast.promise(promise, {
+            loading: 'Sending the message . . .',
+            success: (data) => data,
+            error: 'An error occured while sending the message.',
+        });
     };
 
     return (
@@ -101,7 +120,10 @@ export function ContactMe() {
                     </div>
                     <button
                         disabled={Boolean(
-                            nameError || emailError || messageError
+                            isSubmitting ||
+                                nameError ||
+                                emailError ||
+                                messageError
                         )}
                         className="bg-white text-black w-fit py-2 px-6 font-bold rounded-lg not-disabled:cursor-pointer not-disabled:hover:scale-105 duration-200 disabled:opacity-70"
                     >

@@ -5,6 +5,7 @@ import { Education } from '@/pages/Education';
 import { PageLayout } from '@/layouts/PageLayout';
 import { Header } from '@/components/Header';
 import { ContactMe } from '@/pages/ContactMe';
+import { Toaster } from 'sonner';
 
 function App() {
     return (
@@ -36,6 +37,8 @@ function App() {
             <div id="contact-me" className="p-4 pt-20">
                 <ContactMe />
             </div>
+
+            <Toaster theme="dark" richColors />
         </div>
     );
 }
