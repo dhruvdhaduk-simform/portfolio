@@ -36,6 +36,15 @@ export function ContactMe() {
         const promise = sendMail(name, email, message);
 
         promise.finally(() => setIsSubmitting(false));
+        promise.then(() => {
+            setName('');
+            setEmail('');
+            setMessage('');
+
+            setIsNameTouched(false);
+            setIsEmailTouched(false);
+            setIsMessageTouched(false);
+        });
 
         toast.promise(promise, {
             loading: 'Sending the message . . .',
