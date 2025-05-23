@@ -6,6 +6,7 @@ import {
     validateEmail,
     validateMessage,
 } from '@/utils/validations';
+import { sendMail } from '@/utils/sendEmail';
 
 export function ContactMe() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,17 +33,13 @@ export function ContactMe() {
 
         setIsSubmitting(true);
 
-        // Real mail sending function will be used instead.
-        const promise = (async () => {
-            await new Promise((resolve) => setTimeout(resolve, 2000));
-            return 'Message Sent successfully.';
-        })();
+        const promise = sendMail(name, email, message);
 
         promise.finally(() => setIsSubmitting(false));
 
         toast.promise(promise, {
             loading: 'Sending the message . . .',
-            success: (data) => data,
+            success: () => 'Message sent successfully.',
             error: 'An error occured while sending the message.',
         });
     };
