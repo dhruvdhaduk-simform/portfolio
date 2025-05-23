@@ -52,7 +52,7 @@ export function ContactMe() {
                                 setIsNameTouched(true);
                             }}
                             placeholder="Enter Your Name"
-                            className="border border-gray h-10 rounded-lg pl-3"
+                            className={`border border-gray h-10 rounded-lg pl-3 ${isNameTouched && nameError ? 'focus:outline-none focus:border-red-500' : ''}`}
                         />
                         <span className="text-sm text-red-500">
                             {isNameTouched && nameError}
@@ -73,7 +73,7 @@ export function ContactMe() {
                                 setIsEmailTouched(true);
                             }}
                             placeholder="Enter Your Email"
-                            className="border border-gray h-10 rounded-lg pl-3"
+                            className={`border border-gray h-10 rounded-lg pl-3 ${isEmailTouched && emailError ? 'focus:outline-none focus:border-red-500' : ''}`}
                         />
                         <span className="text-sm text-red-500">
                             {isEmailTouched && emailError}
@@ -93,7 +93,7 @@ export function ContactMe() {
                                 setIsMessageTouched(true);
                             }}
                             placeholder="How can I help ?"
-                            className="border border-gray rounded-lg p-3 min-h-36"
+                            className={`border border-gray rounded-lg p-3 min-h-36 ${isMessageTouched && messageError ? 'focus:outline-none focus:border-red-500' : ''}`}
                         ></textarea>
                         <span className="text-sm text-red-500">
                             {isMessageTouched && messageError}
