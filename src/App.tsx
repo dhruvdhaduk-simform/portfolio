@@ -4,6 +4,7 @@ import { Projects } from '@/pages/Projects';
 import { Education } from '@/pages/Education';
 import { PageLayout } from '@/layouts/PageLayout';
 import { Header } from '@/components/Header';
+import { ContactMe } from '@/pages/ContactMe';
 
 function App() {
     return (
@@ -30,6 +31,10 @@ function App() {
                 className="w-full h-[50dvh] min-h-[15rem] p-4 pt-20"
             >
                 <Education />
+            </div>
+
+            <div id="contact-me" className="p-4 pt-20">
+                <ContactMe />
             </div>
         </div>
     );
