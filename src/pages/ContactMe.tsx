@@ -61,6 +61,7 @@ export function ContactMe() {
                             id="name"
                             name="name"
                             required
+                            aria-required
                             type="text"
                             value={name}
                             onChange={(e) => {
@@ -82,6 +83,7 @@ export function ContactMe() {
                             id="email"
                             name="email"
                             required
+                            aria-required
                             type="email"
                             value={email}
                             onChange={(e) => {
@@ -103,6 +105,7 @@ export function ContactMe() {
                             name="message"
                             id="message"
                             required
+                            aria-required
                             value={message}
                             onChange={(e) => {
                                 setMessage(e.currentTarget.value);
