@@ -37,9 +37,9 @@ export function ContactMe() {
         setIsSubmitting(true);
 
         const promise = sendMail(
-            contactForm.name,
-            contactForm.email,
-            contactForm.message
+            contactForm.name.trim(),
+            contactForm.email.trim(),
+            contactForm.message.trim()
         );
 
         promise.finally(() => setIsSubmitting(false));
