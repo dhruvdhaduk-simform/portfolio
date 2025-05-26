@@ -1,7 +1,9 @@
+import { Toaster } from 'sonner';
 import { Home } from '@/pages/Home';
 import { Skills } from '@/pages/Skills';
 import { Projects } from '@/pages/Projects';
 import { Education } from '@/pages/Education';
+import { ContactMe } from '@/pages/ContactMe';
 import { PageLayout } from '@/layouts/PageLayout';
 import { Header } from '@/components/Header';
 
@@ -31,6 +33,12 @@ function App() {
             >
                 <Education />
             </div>
+
+            <div id="contact-me" className="p-4 pt-20">
+                <ContactMe />
+            </div>
+
+            <Toaster theme="dark" richColors />
         </div>
     );
 }
