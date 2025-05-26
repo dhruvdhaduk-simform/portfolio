@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useReducer, useState } from 'react';
 import { toast } from 'sonner';
 import { PageHeading } from '@/components/PageHeading';
 import {
@@ -7,24 +7,27 @@ import {
     validateMessage,
 } from '@/utils/validations';
 import { sendMail } from '@/utils/sendEmail';
+import {
+    contactFormReducer,
+    contactFormInitialState,
+} from '@/utils/contactForm';
 
 export function ContactMe() {
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    // States to keep track of user inputs.
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-
-    // Boolean flag for each input field. Set to true when input touched.
-    const [isNameTouched, setIsNameTouched] = useState(false);
-    const [isEmailTouched, setIsEmailTouched] = useState(false);
-    const [isMessageTouched, setIsMessageTouched] = useState(false);
+    const [contactForm, dispatch] = useReducer(
+        contactFormReducer,
+        contactFormInitialState
+    );
 
     // Errors for each input field.
-    const nameError = validateName(name);
-    const emailError = validateEmail(email);
-    const messageError = validateMessage(message);
+    const nameError = validateName(contactForm.name);
+    const emailError = validateEmail(contactForm.email);
+    const messageError = validateMessage(contactForm.message);
+
+    const isSubmitDisabled = Boolean(
+        isSubmitting || nameError || emailError || messageError
+    );
 
     const handleSubmit = (e: React.SyntheticEvent) => {
         e.preventDefault();
@@ -33,18 +36,14 @@ export function ContactMe() {
 
         setIsSubmitting(true);
 
-        const promise = sendMail(name, email, message);
+        const promise = sendMail(
+            contactForm.name,
+            contactForm.email,
+            contactForm.message
+        );
 
         promise.finally(() => setIsSubmitting(false));
-        promise.then(() => {
-            setName('');
-            setEmail('');
-            setMessage('');
-
-            setIsNameTouched(false);
-            setIsEmailTouched(false);
-            setIsMessageTouched(false);
-        });
+        promise.then(() => dispatch({ type: 'RESET' }));
 
         toast.promise(promise, {
             loading: 'Sending the message . . .',
@@ -72,16 +71,18 @@ export function ContactMe() {
                             required
                             aria-required
                             type="text"
-                            value={name}
+                            value={contactForm.name}
                             onChange={(e) => {
-                                setName(e.currentTarget.value);
-                                setIsNameTouched(true);
+                                dispatch({
+                                    type: 'SET_NAME',
+                                    payload: e.currentTarget.value,
+                                });
                             }}
                             placeholder="Enter Your Name"
-                            className={`border border-gray h-10 rounded-lg pl-3 ${isNameTouched && nameError ? 'focus:outline-none focus:border-red-500' : ''}`}
+                            className={`border border-gray h-10 rounded-lg pl-3 ${contactForm.isNameTouched && nameError ? 'focus:outline-none focus:border-red-500' : ''}`}
                         />
                         <span className="text-sm text-red-500">
-                            {isNameTouched && nameError}
+                            {contactForm.isNameTouched && nameError}
                         </span>
                     </div>
                     <div className="flex flex-col">
@@ -94,16 +95,18 @@ export function ContactMe() {
                             required
                             aria-required
                             type="email"
-                            value={email}
+                            value={contactForm.email}
                             onChange={(e) => {
-                                setEmail(e.currentTarget.value);
-                                setIsEmailTouched(true);
+                                dispatch({
+                                    type: 'SET_EMAIL',
+                                    payload: e.currentTarget.value,
+                                });
                             }}
                             placeholder="Enter Your Email"
-                            className={`border border-gray h-10 rounded-lg pl-3 ${isEmailTouched && emailError ? 'focus:outline-none focus:border-red-500' : ''}`}
+                            className={`border border-gray h-10 rounded-lg pl-3 ${contactForm.isEmailTouched && emailError ? 'focus:outline-none focus:border-red-500' : ''}`}
                         />
                         <span className="text-sm text-red-500">
-                            {isEmailTouched && emailError}
+                            {contactForm.isEmailTouched && emailError}
                         </span>
                     </div>
                     <div className="flex flex-col">
@@ -115,25 +118,22 @@ export function ContactMe() {
                             id="message"
                             required
                             aria-required
-                            value={message}
+                            value={contactForm.message}
                             onChange={(e) => {
-                                setMessage(e.currentTarget.value);
-                                setIsMessageTouched(true);
+                                dispatch({
+                                    type: 'SET_MESSAGE',
+                                    payload: e.currentTarget.value,
+                                });
                             }}
                             placeholder="How can I help ?"
-                            className={`border border-gray rounded-lg p-3 min-h-36 ${isMessageTouched && messageError ? 'focus:outline-none focus:border-red-500' : ''}`}
+                            className={`border border-gray rounded-lg p-3 min-h-36 ${contactForm.isMessageTouched && messageError ? 'focus:outline-none focus:border-red-500' : ''}`}
                         ></textarea>
                         <span className="text-sm text-red-500">
-                            {isMessageTouched && messageError}
+                            {contactForm.isMessageTouched && messageError}
                         </span>
                     </div>
                     <button
-                        disabled={Boolean(
-                            isSubmitting ||
-                                nameError ||
-                                emailError ||
-                                messageError
-                        )}
+                        disabled={isSubmitDisabled}
                         className="bg-white text-black w-fit py-2 px-6 font-bold rounded-lg not-disabled:cursor-pointer not-disabled:hover:scale-105 duration-200 disabled:opacity-70"
                     >
                         Submit
